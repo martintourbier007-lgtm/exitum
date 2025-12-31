@@ -194,3 +194,28 @@ footer {
     padding: 24px 16px;
   }
 }
+/* Early access form */
+.early-access p {
+  max-width: 600px;
+}
+
+.early-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.early-form input[type="email"] {
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  flex: 1 1 220px;
+  font-size: 14px;
+}
+
+.early-form input[type="email"]:focus {
+  outline: none;
+  border-color: #0f172a;
+}
