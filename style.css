@@ -1,31 +1,28 @@
-:root {
-  --blue: #3b82f6;          /* bleu principal */
-  --blue-dark: #1e3a8a;     /* bleu profond */
-  --blue-night: #0f172a;    /* fond très sombre */
-  --text: #0f172a;
-  --text-light: #6b7280;
-  --bg: #ffffff;
-}
-/* ===== BASE ===== */
-* {
-  box-sizing: border-box;
-}
+/* ===========================
+   EXITUM — Style global
+   =========================== */
 
+/* ---------- Variables ---------- */
 :root {
+  --blue: #3b82f6;
+  --blue-dark: #1e3a8a;
+  --blue-night: #0f172a;
+
   --ink: #0f172a;
   --muted: #64748b;
   --border: #e5e7eb;
   --bg-soft: #f9fafb;
 
-  --accent: #22c55e;           /* vert Finary vibe */
+  --accent: #22c55e;
   --accent-soft: #dcfce7;
   --accent-dark: #16a34a;
-
-  --primary-from: #4f46e5;     /* indigo */
-  --primary-to: #22c55e;       /* vert gradient */
 }
 
-/* Global */
+/* ---------- Reset / Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, "SF Pro Text", Segoe UI, Arial, sans-serif;
@@ -34,17 +31,31 @@ body {
   line-height: 1.65;
 }
 
-/* Layout */
+a {
+  color: inherit;
+}
+
+/* ---------- Layout ---------- */
 .container {
   max-width: 960px;
   margin: 0 auto;
   padding: 28px 20px;
 }
 
-/* ===== HEADER ===== */
+/* ===========================
+   HEADER & NAV
+   =========================== */
+
 header {
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -54,7 +65,23 @@ header {
   text-transform: uppercase;
 }
 
-/* ===== HERO ===== */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.menu a {
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+/* ===========================
+   HERO
+   =========================== */
+
 .hero {
   margin-top: 32px;
   margin-bottom: 28px;
@@ -79,19 +106,18 @@ header {
   color: var(--muted);
 }
 
-/* Badge style Finary */
+/* Badge style */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(59,130,246,0.12);
+  background: rgba(59, 130, 246, 0.12);
   color: var(--blue);
   font-weight: 600;
   font-size: 13px;
-}
-
+  margin-bottom: 10px;
 }
 
 .badge-dot {
@@ -101,7 +127,10 @@ header {
   background: var(--accent);
 }
 
-/* Buttons */
+/* ===========================
+   BOUTONS & CTA
+   =========================== */
+
 .cta {
   display: flex;
   flex-wrap: wrap;
@@ -122,44 +151,33 @@ header {
   text-decoration: none;
 }
 
-/* Primary: gradient Finary-like */
+/* Primary */
 .btn.primary {
   background: var(--blue);
   color: white;
-  border-radius: 999px;
-  padding: 10px 18px;
   font-weight: 600;
-  border: none;
   transition: 0.2s ease;
+  box-shadow: 0 10px 24px rgba(59, 130, 246, 0.32);
 }
 
 .btn.primary:hover {
   background: var(--blue-dark);
+  transform: translateY(-1px);
 }
 
-/* Secondary: contour coloré */
+/* Secondary */
 .btn.secondary {
   background: white;
   color: var(--blue);
   border-radius: 999px;
   padding: 10px 18px;
-  border: 1px solid rgba(59,130,246,0.35);
+  border: 1px solid rgba(59, 130, 246, 0.35);
   font-weight: 600;
   transition: 0.2s ease;
 }
 
 .btn.secondary:hover {
-  background: rgba(59,130,246,0.08);
-}
-
-/* Hover states */
-.btn.primary:hover {
-  filter: brightness(1.03);
-  transform: translateY(-1px);
-}
-
-.btn.secondary:hover {
-  background: #f9fafb;
+  background: rgba(59, 130, 246, 0.06);
 }
 
 /* Small note */
@@ -168,7 +186,10 @@ header {
   color: var(--muted);
 }
 
-/* ===== SECTIONS ===== */
+/* ===========================
+   SECTIONS GÉNÉRALES
+   =========================== */
+
 .section {
   padding: 32px 0;
   border-top: 1px solid #f3f4f6;
@@ -185,7 +206,10 @@ header {
   color: var(--muted);
 }
 
-/* ===== GRID CARDS ===== */
+/* ===========================
+   GRID & CARDS
+   =========================== */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -212,7 +236,10 @@ header {
   color: var(--muted);
 }
 
-/* ===== CTA BLOCK ===== */
+/* ===========================
+   CTA BLOCK (bandeau foncé)
+   =========================== */
+
 .cta-block {
   margin-top: 12px;
   padding: 36px 0;
@@ -235,13 +262,15 @@ header {
 }
 
 .cta-block .btn.primary {
-  background-image: none;
   background: #ffffff;
   color: #020617;
   box-shadow: none;
 }
 
-/* ===== EARLY ACCESS FORM ===== */
+/* ===========================
+   EARLY ACCESS
+   =========================== */
+
 .early-access p {
   max-width: 600px;
   color: var(--muted);
@@ -265,11 +294,59 @@ header {
 
 .early-form input[type="email"]:focus {
   outline: none;
-  border-color: var(--primary-from);
-  box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.18);
+  border-color: var(--blue);
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.18);
 }
 
-/* ===== FOOTER ===== */
+/* ===========================
+   DOMAIN BLOCKS (guide.html)
+   =========================== */
+
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.domain-card {
+  background: rgba(15, 23, 42, 0.02);
+  border-radius: 14px;
+  padding: 16px 18px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.domain-card .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(59, 130, 246, 0.14);
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.domain-card h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.domain-card p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+
 footer {
   border-top: 1px solid var(--border);
   background: #f8fafc;
@@ -279,26 +356,9 @@ footer {
   text-align: center;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 640px) {
-  .hero {
-    padding: 24px 18px;
-    margin-top: 24px;
-  }
-
-  .hero h1 {
-    font-size: 30px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .container {
-    padding: 24px 16px;
-  }
-}
-/* ---------- SPLASH EXITUM ---------- */
+/* ===========================
+   SPLASH EXITUM
+   =========================== */
 
 #splash {
   position: fixed;
@@ -340,90 +400,39 @@ footer {
     visibility: hidden;
   }
 }
-/* ---- Domain blocks on guide page ---- */
 
-.domain-grid {
-.domain-card {
-  background: radial-gradient(circle at top left, rgba(59,130,246,0.12), rgba(15,23,42,0.01));
-  border-radius: 16px;
-  padding: 18px 20px;
-  border: 1px solid rgba(148, 163, 184, 0.4);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+/* ===========================
+   RESPONSIVE
+   =========================== */
 
+@media (max-width: 640px) {
+  .hero {
+    padding: 24px 18px;
+    margin-top: 24px;
+  }
 
-.domain-card {
-  background: rgba(15, 23, 42, 0.02);
-  border-radius: 14px;
-  padding: 16px 18px;
-  border: 1px solid rgba(148, 163, 184, 0.4);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
+  .hero h1 {
+    font-size: 30px;
+  }
 
-.domain-card .icon {
- .domain-card .icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(59, 130, 246, 0.14);
-  font-size: 22px;
-  margin-bottom: 6px;
-}
+  .container {
+    padding: 24px 16px;
+  }
 
-.domain-card h3 {
-  margin: 0;
-  font-size: 15px;
-}
+  .grid,
+  .domain-grid {
+    grid-template-columns: 1fr;
+  }
 
-.domain-card p {
-  margin: 0;
-  font-size: 13px;
-  color: var(--text-light);
-  line-height: 1.5;
-}
-/* -------- NAV -------- */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 
-.menu a {
-  margin-left: 14px;
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-}
-
-
-/* -------- BUTTONS -------- */
-.btn {
-  display: inline-block;
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-/* Premium button */
-.btn.primary {
-  background: #2F5EF3;          /* bleu premium */
-  color: white;
-  box-shadow: 0 8px 24px rgba(47,94,243,0.25);
-}
-
-.btn.primary:hover {
-  background: #1F44C3;
-  box-shadow: 0 12px 32px rgba(47,94,243,0.35);
-  transform: translateY(-1px);
+  .menu {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+  }
 }
