@@ -235,6 +235,17 @@ header {
   font-size: 14px;
   color: var(--muted);
 }
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+}
 
 /* ===========================
    CTA BLOCK (bandeau foncé)
