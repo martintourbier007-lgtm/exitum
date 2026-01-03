@@ -519,3 +519,21 @@ header {
   margin-left: 16px;
   text-decoration: none;
 }
+/* --- Troisième bouton : style discret premium --- */
+.btn.tertiary {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.btn.tertiary:hover {
+  opacity: 1;
+  border-color: rgba(255,255,255,0.6);
+}
