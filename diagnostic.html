@@ -1,268 +1,432 @@
-<form
-  action="https://formspree.io/f/xrebpqvq"
-  method="POST"
-  class="diagnostic-form"
->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EXITUM — Diagnostic d’expatriation</title>
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- HIDDEN FIELDS -->
-  <input type="hidden" name="form_type" value="diagnostic_expat">
-  <input type="hidden" name="_redirect" value="https://exitum-rho.vercel.app/diagnostic-resultat.html">
+  <!-- Style léger spécifique au diagnostic -->
+  <style>
+    .diagnostic-intro {
+      margin-bottom: 24px;
+    }
 
-  <!-- SECTION 1 : PROFIL DE BASE -->
-  <div class="card">
-    <h2>1. Profil de base</h2>
+    .diagnostic-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
 
-    <label>
-      Prénom / pseudo
-      <input type="text" name="nom" required />
-    </label>
+    .diagnostic-form .card {
+      margin: 0;
+    }
 
-    <label>
-      Adresse e-mail (pour recevoir votre synthèse)
-      <input type="email" name="email" required />
-    </label>
+    .diagnostic-form h3 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
 
-    <label>
-      Pays de résidence actuel
-      <input type="text" name="pays_residence_actuel" />
-    </label>
+    .diagnostic-form p.helper {
+      margin: 0 0 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
 
-    <label>
-      Âge (approx.)
-      <input type="number" name="age" min="18" max="90" />
-    </label>
+    .diagnostic-form label {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 13px;
+      margin-top: 6px;
+    }
 
-    <label>
-      Situation principale
-      <select name="situation_principale">
-        <option value="">Sélectionnez…</option>
-        <option value="salarie">Salarié</option>
-        <option value="independant">Indépendant / freelance</option>
-        <option value="dirigeant">Dirigeant / associé</option>
-        <option value="investisseur">Investisseur</option>
-        <option value="retraite">Retraité</option>
-        <option value="autre">Autre</option>
-      </select>
-    </label>
+    .diagnostic-form input,
+    .diagnostic-form select,
+    .diagnostic-form textarea {
+      margin-top: 2px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    .diagnostic-form textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .diagnostic-form input:focus,
+    .diagnostic-form select:focus,
+    .diagnostic-form textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 1px rgba(59,130,246,0.18);
+    }
+
+    .diagnostic-actions {
+      margin-top: 12px;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo">EXITUM</a>
+    <div class="menu">
+      <a href="guide.html">Guide</a>
+      <a href="pays.html">Fiches pays</a>
+      <a href="diagnostic.html">Diagnostic</a>
+    </div>
   </div>
+</header>
 
-  <!-- SECTION 2 : RESIDENCE & PRESENCE -->
-  <div class="card">
-    <h2>2. Résidence & présence</h2>
+<main>
+  <section class="section container">
+    <div class="diagnostic-intro">
+      <h1>Découvrez votre profil d’expatriation</h1>
+      <p class="note">
+        Ce diagnostic est <strong>pédagogique et général</strong>.  
+        Il ne remplace pas un avis fiscal, juridique ou financier individuel.
+      </p>
+      <p>
+        Répondez calmement à quelques questions.  
+        L’objectif : vous aider à mettre de l’ordre dans votre situation, vos attaches et votre projet.
+      </p>
+    </div>
 
-    <label>
-      Sur les 12 derniers mois, où avez-vous passé le plus de temps ?
-      <select name="presence_principale_12m">
-        <option value="">Sélectionnez…</option>
-        <option value="majorite_france">Principalement en France</option>
-        <option value="majorite_etranger">Principalement à l’étranger</option>
-        <option value="reparti">Réparti entre plusieurs pays</option>
-      </select>
-    </label>
+    <form
+      action="https://formspree.io/f/xrebpqvq"
+      method="POST"
+      class="diagnostic-form"
+    >
+      <!-- HIDDEN FIELDS -->
+      <input type="hidden" name="form_type" value="diagnostic_expat">
+      <input type="hidden" name="_redirect" value="https://exitum-rho.vercel.app/diagnostic-resultat.html">
 
-    <label>
-      Nombre estimé de jours en France sur 12 mois
-      <input type="number" name="jours_france_12m" min="0" max="365" />
-    </label>
+      <!-- BLOCS / QUESTIONS -->
 
-    <label>
-      Avez-vous un logement en France ?
-      <select name="logement_france">
-        <option value="">Sélectionnez…</option>
-        <option value="aucun">Aucun logement</option>
-        <option value="rp">Résidence principale</option>
-        <option value="rs">Résidence secondaire</option>
-        <option value="locataire">Location à votre nom</option>
-      </select>
-    </label>
+      <!-- 1. Identité & profil -->
+      <div class="card">
+        <h3>1. Qui êtes-vous ?</h3>
+        <p class="helper">Juste de quoi personnaliser votre synthèse.</p>
 
-    <label>
-      Avez-vous déjà déclaré un changement de résidence fiscale ?
-      <select name="changement_residence_declare">
-        <option value="">Sélectionnez…</option>
-        <option value="oui">Oui</option>
-        <option value="non">Non</option>
-        <option value="je_ne_sais_pas">Je ne sais pas</option>
-      </select>
-    </label>
+        <label>
+          Prénom / pseudo
+          <input type="text" name="nom" required />
+        </label>
+
+        <label>
+          Adresse e-mail (pour recevoir votre synthèse)
+          <input type="email" name="email" required />
+        </label>
+
+        <label>
+          Âge (approx.)
+          <input type="number" name="age" min="18" max="90" />
+        </label>
+
+        <label>
+          Situation principale aujourd’hui
+          <select name="situation_principale">
+            <option value="">Sélectionnez…</option>
+            <option value="salarie">Salarié</option>
+            <option value="independant">Indépendant / freelance</option>
+            <option value="dirigeant">Dirigeant / associé</option>
+            <option value="investisseur">Investisseur</option>
+            <option value="retraite">Retraité</option>
+            <option value="autre">Autre</option>
+          </select>
+        </label>
+      </div>
+
+      <!-- 2. Lieu de vie actuel -->
+      <div class="card">
+        <h3>2. Où vivez-vous aujourd’hui ?</h3>
+        <p class="helper">On commence par votre réalité actuelle, pas seulement votre projet.</p>
+
+        <label>
+          Pays de résidence actuel
+          <input type="text" name="pays_residence_actuel" />
+        </label>
+
+        <label>
+          Sur les 12 derniers mois, vous avez passé la majorité du temps…
+          <select name="presence_principale_12m">
+            <option value="">Sélectionnez…</option>
+            <option value="majorite_france">Principalement en France</option>
+            <option value="majorite_etranger">Principalement à l’étranger</option>
+            <option value="reparti">Réparti entre plusieurs pays</option>
+          </select>
+        </label>
+
+        <label>
+          Nombre estimé de jours en France sur 12 mois
+          <input type="number" name="jours_france_12m" min="0" max="365" />
+        </label>
+      </div>
+
+      <!-- 3. Logement & attaches France -->
+      <div class="card">
+        <h3>3. Logement et attaches en France</h3>
+        <p class="helper">Les attaches “concrètes” comptent souvent plus que l’intention.</p>
+
+        <label>
+          Avez-vous un logement en France ?
+          <select name="logement_france">
+            <option value="">Sélectionnez…</option>
+            <option value="aucun">Aucun logement</option>
+            <option value="rp">Résidence principale</option>
+            <option value="rs">Résidence secondaire</option>
+            <option value="locataire">Location à votre nom</option>
+          </select>
+        </label>
+
+        <label>
+          Avez-vous déjà déclaré un changement de résidence fiscale ?
+          <select name="changement_residence_declare">
+            <option value="">Sélectionnez…</option>
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+            <option value="je_ne_sais_pas">Je ne sais pas</option>
+          </select>
+        </label>
+      </div>
+
+      <!-- 4. Famille & entourage -->
+      <div class="card">
+        <h3>4. Famille et entourage</h3>
+        <p class="helper">Le lieu de vie de votre famille est un élément important de lecture.</p>
+
+        <label>
+          Situation familiale
+          <select name="situation_familiale">
+            <option value="">Sélectionnez…</option>
+            <option value="celibataire">Célibataire</option>
+            <option value="couple_sans_enfant">En couple, sans enfant</option>
+            <option value="couple_avec_enfant">En couple, avec enfant(s)</option>
+            <option value="parent_seul">Parent seul</option>
+          </select>
+        </label>
+
+        <label>
+          Où vit principalement votre conjoint / partenaire ?
+          <select name="lieu_vie_conjoint">
+            <option value="">Sélectionnez…</option>
+            <option value="france">En France</option>
+            <option value="meme_pays_que_moi">Dans le même pays que moi</option>
+            <option value="autre_pays">Dans un autre pays</option>
+            <option value="sans_objet">Sans objet</option>
+          </select>
+        </label>
+
+        <label>
+          Où vivent vos enfants (si applicable) ?
+          <select name="lieu_vie_enfants">
+            <option value="">Sélectionnez…</option>
+            <option value="france">Principalement en France</option>
+            <option value="meme_pays_que_moi">Dans le même pays que moi</option>
+            <option value="repartis">Répartis entre plusieurs pays</option>
+            <option value="sans_objet">Sans objet</option>
+          </select>
+        </label>
+      </div>
+
+      <!-- 5. Revenus & activité -->
+      <div class="card">
+        <h3>5. Revenus et activité</h3>
+        <p class="helper">On ne vous demande pas de montants, juste la nature de vos revenus.</p>
+
+        <label>
+          Source de revenus principale
+          <select name="revenu_principal">
+            <option value="">Sélectionnez…</option>
+            <option value="salaire_france">Salaire — employeur en France</option>
+            <option value="salaire_etranger">Salaire — employeur étranger</option>
+            <option value="independant_france">Indépendant — clients majoritairement en France</option>
+            <option value="independant_etranger">Indépendant — clients majoritairement à l’étranger</option>
+            <option value="revenus_capital">Revenus du capital (loyers, dividendes…)</option>
+            <option value="retraite_pension">Retraite / pension</option>
+          </select>
+        </label>
+
+        <label>
+          Avez-vous une société ou une activité enregistrée en France ?
+          <select name="societe_france">
+            <option value="">Sélectionnez…</option>
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+            <option value="en_cours">En cours / en réflexion</option>
+          </select>
+        </label>
+
+        <label>
+          Revenus réguliers de source française (loyers, dividendes, etc.) ?
+          <select name="revenus_source_france">
+            <option value="">Sélectionnez…</option>
+            <option value="oui_significatif">Oui, significatifs</option>
+            <option value="oui_marginal">Oui, marginaux</option>
+            <option value="non">Non</option>
+          </select>
+        </label>
+      </div>
+
+      <!-- 6. Patrimoine & comptes -->
+      <div class="card">
+        <h3>6. Patrimoine et comptes en France</h3>
+        <p class="helper">Ces éléments influencent parfois la lecture globale de votre situation.</p>
+
+        <label>
+          Biens immobiliers en France
+          <select name="immobilier_france">
+            <option value="">Sélectionnez…</option>
+            <option value="aucun">Aucun</option>
+            <option value="residence_principale">Résidence principale</option>
+            <option value="locatif">Biens locatifs</option>
+            <option value="mix">Mix résidence + locatif</option>
+          </select>
+        </label>
+
+        <label>
+          Comptes bancaires en France
+          <select name="comptes_bancaires_france">
+            <option value="">Sélectionnez…</option>
+            <option value="oui_principal">Oui — compte principal</option>
+            <option value="oui_secondaire">Oui — usage secondaire</option>
+            <option value="non">Non</option>
+          </select>
+        </label>
+
+        <label>
+          Placements de type PEA, assurance-vie, etc. en France
+          <select name="placements_france">
+            <option value="">Sélectionnez…</option>
+            <option value="oui_significatif">Oui — montants significatifs</option>
+            <option value="oui_limite">Oui — montants limités</option>
+            <option value="non">Non</option>
+          </select>
+        </label>
+      </div>
+
+      <!-- 7. Projet d’expatriation -->
+      <div class="card">
+        <h3>7. Votre projet d’expatriation</h3>
+        <p class="helper">On passe du présent à ce que vous envisagez vraiment.</p>
+
+        <label>
+          Où en est votre projet ?
+          <select name="etat_projet">
+            <option value="">Sélectionnez…</option>
+            <option value="idee">À l’état d’idée</option>
+            <option value="en_preparation">En préparation avancée</option>
+            <option value="datee">Dater (date prévue fixée)</option>
+            <option value="deja_installe">Je suis déjà installé à l’étranger</option>
+          </select>
+        </label>
+
+        <label>
+          Pays de destination principal (ou actuel)
+          <input type="text" name="pays_destination" />
+        </label>
+
+        <label>
+          Durée envisagée
+          <select name="duree_envisagee">
+            <option value="">Sélectionnez…</option>
+            <option value="moins_1_an">Moins d’un an</option>
+            <option value="1_3_ans">1 à 3 ans</option>
+            <option value="3_5_ans">3 à 5 ans</option>
+            <option value="long_terme">Long terme / sans limite</option>
+          </select>
+        </label>
+
+        <label>
+          Motivation principale
+          <select name="motivation_principale">
+            <option value="">Sélectionnez…</option>
+            <option value="fiscalite">Fiscalité</option>
+            <option value="qualite_vie">Qualité de vie</option>
+            <option value="opportunite_pro">Opportunité professionnelle</option>
+            <option value="famille">Famille / conjoint</option>
+            <option value="autre">Autre</option>
+          </select>
+        </label>
+      </div>
+
+      <!-- 8. Compréhension & accompagnement -->
+      <div class="card">
+        <h3>8. Compréhension & accompagnement</h3>
+        <p class="helper">Pour savoir comment calibrer la réponse que vous recevrez.</p>
+
+        <label>
+          Avez-vous déjà consulté un professionnel (avocat, fiscaliste, etc.) sur ce sujet ?
+          <select name="consultation_pro">
+            <option value="">Sélectionnez…</option>
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+          </select>
+        </label>
+
+        <label>
+          Comment évaluez-vous votre compréhension des règles de résidence fiscale ?
+          <select name="niveau_comprehension">
+            <option value="">Sélectionnez…</option>
+            <option value="debutant">Débutant</option>
+            <option value="intermediaire">Intermédiaire</option>
+            <option value="avance">Avancé</option>
+          </select>
+        </label>
+
+        <label>
+          Souhaitez-vous être recontacté(e) pour un accompagnement plus structuré ?
+          <select name="souhait_accompagnement">
+            <option value="">Sélectionnez…</option>
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+            <option value="peut_etre">Peut-être / selon la synthèse</option>
+          </select>
+        </label>
+      </div>
+
+      <!-- 9. Zone libre -->
+      <div class="card">
+        <h3>9. Zone libre (facultatif)</h3>
+        <p class="helper">
+          Si vous le souhaitez, vous pouvez expliquer en quelques lignes votre situation, vos inquiétudes, ou un point particulier.
+        </p>
+
+        <label>
+          Message libre
+          <textarea name="commentaire_libre"></textarea>
+        </label>
+      </div>
+
+      <!-- CTA -->
+      <div class="diagnostic-actions cta">
+        <button type="submit" class="btn primary">
+          Envoyer mon diagnostic
+        </button>
+      </div>
+
+      <p class="note">
+        EXITUM fournit une information <strong>générale et pédagogique</strong> à partir de vos réponses.  
+        Pour toute décision engageante, rapprochez-vous d’un professionnel certifié.
+      </p>
+
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <p class="note">
+      EXITUM — Clarity for international mobility.
+    </p>
   </div>
-
-  <!-- SECTION 3 : FAMILLE & ATTACHES PERSONNELLES -->
-  <div class="card">
-    <h2>3. Famille & attaches personnelles</h2>
-
-    <label>
-      Situation familiale
-      <select name="situation_familiale">
-        <option value="">Sélectionnez…</option>
-        <option value="celibataire">Célibataire</option>
-        <option value="couple_sans_enfant">En couple, sans enfant</option>
-        <option value="couple_avec_enfant">En couple, avec enfant(s)</option>
-        <option value="parent_seul">Parent seul</option>
-      </select>
-    </label>
-
-    <label>
-      Où vit principalement votre conjoint / partenaire ?
-      <select name="lieu_vie_conjoint">
-        <option value="">Sélectionnez…</option>
-        <option value="france">En France</option>
-        <option value="meme_pays_que_moi">Dans le même pays que moi</option>
-        <option value="autre_pays">Dans un autre pays</option>
-        <option value="sans_objet">Sans objet</option>
-      </select>
-    </label>
-
-    <label>
-      Où vivent vos enfants (si applicable) ?
-      <select name="lieu_vie_enfants">
-        <option value="">Sélectionnez…</option>
-        <option value="france">Principalement en France</option>
-        <option value="meme_pays_que_moi">Dans le même pays que moi</option>
-        <option value="repartis">Répartis entre plusieurs pays</option>
-        <option value="sans_objet">Sans objet</option>
-      </select>
-    </label>
-  </div>
-
-  <!-- SECTION 4 : REVENUS & ACTIVITÉ -->
-  <div class="card">
-    <h2>4. Revenus & activité</h2>
-
-    <label>
-      Quelle est aujourd’hui votre source de revenus principale ?
-      <select name="revenu_principal">
-        <option value="">Sélectionnez…</option>
-        <option value="salaire_france">Salaire — employeur en France</option>
-        <option value="salaire_etranger">Salaire — employeur étranger</option>
-        <option value="independant_france">Indépendant — clients majoritairement en France</option>
-        <option value="independant_etranger">Indépendant — clients majoritairement à l’étranger</option>
-        <option value="revenus_capital">Revenus du capital</option>
-        <option value="retraite_pension">Retraite / pension</option>
-      </select>
-    </label>
-
-    <label>
-      Avez-vous une société ou une activité enregistrée en France ?
-      <select name="societe_france">
-        <option value="">Sélectionnez…</option>
-        <option value="oui">Oui</option>
-        <option value="non">Non</option>
-        <option value="en_cours">En cours / réflexion</option>
-      </select>
-    </label>
-
-    <label>
-      Avez-vous des revenus réguliers de source française ?
-      <select name="revenus_source_france">
-        <option value="">Sélectionnez…</option>
-        <option value="oui_significatif">Oui, significatifs</option>
-        <option value="oui_marginal">Oui, marginaux</option>
-        <option value="non">Non</option>
-      </select>
-    </label>
-  </div>
-
-  <!-- SECTION 5 : PATRIMOINE -->
-  <div class="card">
-    <h2>5. Patrimoine & comptes</h2>
-
-    <label>
-      Biens immobiliers en France ?
-      <select name="immobilier_france">
-        <option value="">Sélectionnez…</option>
-        <option value="aucun">Aucun</option>
-        <option value="rp">Résidence principale</option>
-        <option value="locatif">Biens locatifs</option>
-        <option value="mix">Mix</option>
-      </select>
-    </label>
-
-    <label>
-      Comptes bancaires en France ?
-      <select name="comptes_bancaires_france">
-        <option value="">Sélectionnez…</option>
-        <option value="oui_principal">Oui — principal</option>
-        <option value="oui_secondaire">Oui — secondaire</option>
-        <option value="non">Non</option>
-      </select>
-    </label>
-
-    <label>
-      Placements en France ?
-      <select name="placements_france">
-        <option value="">Sélectionnez…</option>
-        <option value="oui_significatif">Oui — significatifs</option>
-        <option value="oui_limite">Oui — limités</option>
-        <option value="non">Non</option>
-      </select>
-    </label>
-  </div>
-
-  <!-- SECTION 6 : PROJET -->
-  <div class="card">
-    <h2>6. Projet d’expatriation</h2>
-
-    <label>
-      État du projet
-      <select name="etat_projet">
-        <option value="">Sélectionnez…</option>
-        <option value="idee">Idée</option>
-        <option value="en_preparation">Préparation</option>
-        <option value="datee">Daté</option>
-        <option value="deja_installe">Déjà expatrié</option>
-      </select>
-    </label>
-
-    <label>
-      Pays cible
-      <input type="text" name="pays_destination" />
-    </label>
-
-    <label>
-      Durée envisagée
-      <select name="duree_envisagee">
-        <option value="">Sélectionnez…</option>
-        <option value="moins_1_an">Moins d’un an</option>
-        <option value="1_3_ans">1 à 3 ans</option>
-        <option value="3_5_ans">3 à 5 ans</option>
-        <option value="long_terme">Long terme</option>
-      </select>
-    </label>
-
-    <label>
-      Motivation principale
-      <select name="motivation_principale">
-        <option value="">Sélectionnez…</option>
-        <option value="fiscalite">Fiscalité</option>
-        <option value="qualite_vie">Qualité de vie</option>
-        <option value="opportunite_pro">Opportunité</option>
-        <option value="famille">Famille</option>
-        <option value="autre">Autre</option>
-      </select>
-    </label>
-  </div>
-
-  <!-- SECTION 7 : NOTES -->
-  <div class="card">
-    <h2>7. Commentaires</h2>
-
-    <label>
-      Expliquez librement votre situation (facultatif)
-      <textarea name="commentaire_libre" rows="4"></textarea>
-    </label>
-  </div>
-
-  <!-- CTA -->
-  <div class="cta">
-    <button type="submit" class="btn primary">
-      Envoyer mon diagnostic
-    </button>
-  </div>
-
-  <p class="note">
-    EXITUM fournit une information pédagogique et générale.
-    Aucun conseil fiscal individuel n’est délivré.
-  </p>
-
-</form>
+</footer>
+</body>
+</html>
