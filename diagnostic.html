@@ -106,7 +106,6 @@
     >
       <!-- HIDDEN FIELDS -->
       <input type="hidden" name="form_type" value="diagnostic_expat">
-      <input type="hidden" name="_redirect" value="https://exitum-rho.vercel.app/diagnostic-resultat.html">
 
       <!-- BLOCS / QUESTIONS -->
 
@@ -428,5 +427,38 @@
     </p>
   </div>
 </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('diagnostic-form');
+    if (!form) return;
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault(); // Empêche la redirection Formspree
+
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        // Si tu veux être strict :
+        // if (response.ok) {
+        //   window.location.href = 'diagnostic-resultat.html';
+        // } else {
+        //   window.location.href = 'diagnostic-resultat.html';
+        // }
+
+        // Pour l’instant : toujours rediriger vers EXITUM
+        window.location.href = 'diagnostic-resultat.html';
+      } catch (error) {
+        // En cas de souci réseau, on peut quand même envoyer vers la page résultat
+        window.location.href = 'diagnostic-resultat.html';
+      }
+    });
+  });
+</script>
 </body>
 </html>
