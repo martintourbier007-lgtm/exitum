@@ -18,6 +18,26 @@
   --accent-dark: #16a34a;
 }
 
+/* ---------- Reset / Base /* ===========================
+   EXITUM — Style global
+   =========================== */
+
+/* ---------- Variables ---------- */
+:root {
+  --blue: #3b82f6;
+  --blue-dark: #1e3a8a;
+  --blue-night: #0f172a;
+
+  --ink: #0f172a;
+  --muted: #64748b;
+  --border: #e5e7eb;
+  --bg-soft: #f9fafb;
+
+  --accent: #22c55e;
+  --accent-soft: #dcfce7;
+  --accent-dark: #16a34a;
+}
+
 /* ---------- Reset / Base ---------- */
 * {
   box-sizing: border-box;
