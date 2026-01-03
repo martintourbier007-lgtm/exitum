@@ -495,3 +495,27 @@ footer {
   opacity: 0.4;
   pointer-events: none;
 }
+/* --- Override global pour centrer le site et réduire la largeur --- */
+
+body {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Header plus aéré --- */
+
+header {
+  padding: 12px 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav a {
+  margin-left: 16px;
+  text-decoration: none;
+}
