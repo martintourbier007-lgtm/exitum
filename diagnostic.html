@@ -99,17 +99,17 @@
       </p>
     </div>
 
+    <!-- FORMULAIRE -->
     <form
+      id="diagnostic-form"
       action="https://formspree.io/f/xrebpqvq"
       method="POST"
       class="diagnostic-form"
     >
-      <!-- HIDDEN FIELDS -->
+      <!-- HIDDEN -->
       <input type="hidden" name="form_type" value="diagnostic_expat">
 
-      <!-- BLOCS / QUESTIONS -->
-
-      <!-- 1. Identité & profil -->
+      <!-- 1. Identité -->
       <div class="card">
         <h3>1. Qui êtes-vous ?</h3>
         <p class="helper">Juste de quoi personnaliser votre synthèse.</p>
@@ -143,7 +143,7 @@
         </label>
       </div>
 
-      <!-- 2. Lieu de vie actuel -->
+      <!-- 2. Lieu de vie -->
       <div class="card">
         <h3>2. Où vivez-vous aujourd’hui ?</h3>
         <p class="helper">On commence par votre réalité actuelle, pas seulement votre projet.</p>
@@ -172,7 +172,7 @@
       <!-- 3. Logement & attaches France -->
       <div class="card">
         <h3>3. Logement et attaches en France</h3>
-        <p class="helper">Les attaches “concrètes” comptent souvent plus que l’intention.</p>
+        <p class="helper">Les attaches concrètes comptent souvent plus que l’intention.</p>
 
         <label>
           Avez-vous un logement en France ?
@@ -196,7 +196,7 @@
         </label>
       </div>
 
-      <!-- 4. Famille & entourage -->
+      <!-- 4. Famille -->
       <div class="card">
         <h3>4. Famille et entourage</h3>
         <p class="helper">Le lieu de vie de votre famille est un élément important de lecture.</p>
@@ -235,10 +235,10 @@
         </label>
       </div>
 
-      <!-- 5. Revenus & activité -->
+      <!-- 5. Revenus -->
       <div class="card">
         <h3>5. Revenus et activité</h3>
-        <p class="helper">On ne vous demande pas de montants, juste la nature de vos revenus.</p>
+        <p class="helper">On ne vous demande pas de montants, juste la nature des revenus.</p>
 
         <label>
           Source de revenus principale
@@ -246,25 +246,25 @@
             <option value="">Sélectionnez…</option>
             <option value="salaire_france">Salaire — employeur en France</option>
             <option value="salaire_etranger">Salaire — employeur étranger</option>
-            <option value="independant_france">Indépendant — clients majoritairement en France</option>
-            <option value="independant_etranger">Indépendant — clients majoritairement à l’étranger</option>
+            <option value="independant_france">Indépendant — clients surtout en France</option>
+            <option value="independant_etranger">Indépendant — clients surtout à l’étranger</option>
             <option value="revenus_capital">Revenus du capital (loyers, dividendes…)</option>
             <option value="retraite_pension">Retraite / pension</option>
           </select>
         </label>
 
         <label>
-          Avez-vous une société ou une activité enregistrée en France ?
+          Société ou activité enregistrée en France ?
           <select name="societe_france">
             <option value="">Sélectionnez…</option>
             <option value="oui">Oui</option>
             <option value="non">Non</option>
-            <option value="en_cours">En cours / en réflexion</option>
+            <option value="en_cours">En cours / réflexion</option>
           </select>
         </label>
 
         <label>
-          Revenus réguliers de source française (loyers, dividendes, etc.) ?
+          Revenus réguliers de source française ?
           <select name="revenus_source_france">
             <option value="">Sélectionnez…</option>
             <option value="oui_significatif">Oui, significatifs</option>
@@ -274,7 +274,7 @@
         </label>
       </div>
 
-      <!-- 6. Patrimoine & comptes -->
+      <!-- 6. Patrimoine -->
       <div class="card">
         <h3>6. Patrimoine et comptes en France</h3>
         <p class="helper">Ces éléments influencent parfois la lecture globale de votre situation.</p>
@@ -301,7 +301,7 @@
         </label>
 
         <label>
-          Placements de type PEA, assurance-vie, etc. en France
+          Placements (PEA, assurance-vie, etc.) en France
           <select name="placements_france">
             <option value="">Sélectionnez…</option>
             <option value="oui_significatif">Oui — montants significatifs</option>
@@ -311,7 +311,7 @@
         </label>
       </div>
 
-      <!-- 7. Projet d’expatriation -->
+      <!-- 7. Projet -->
       <div class="card">
         <h3>7. Votre projet d’expatriation</h3>
         <p class="helper">On passe du présent à ce que vous envisagez vraiment.</p>
@@ -322,7 +322,7 @@
             <option value="">Sélectionnez…</option>
             <option value="idee">À l’état d’idée</option>
             <option value="en_preparation">En préparation avancée</option>
-            <option value="datee">Dater (date prévue fixée)</option>
+            <option value="datee">Daté (date prévue fixée)</option>
             <option value="deja_installe">Je suis déjà installé à l’étranger</option>
           </select>
         </label>
@@ -359,10 +359,10 @@
       <!-- 8. Compréhension & accompagnement -->
       <div class="card">
         <h3>8. Compréhension & accompagnement</h3>
-        <p class="helper">Pour savoir comment calibrer la réponse que vous recevrez.</p>
+        <p class="helper">Pour calibrer au mieux la réponse que vous recevrez.</p>
 
         <label>
-          Avez-vous déjà consulté un professionnel (avocat, fiscaliste, etc.) sur ce sujet ?
+          Avez-vous déjà consulté un professionnel (avocat, fiscaliste, etc.) ?
           <select name="consultation_pro">
             <option value="">Sélectionnez…</option>
             <option value="oui">Oui</option>
@@ -371,7 +371,7 @@
         </label>
 
         <label>
-          Comment évaluez-vous votre compréhension des règles de résidence fiscale ?
+          Votre niveau de compréhension des règles de résidence fiscale
           <select name="niveau_comprehension">
             <option value="">Sélectionnez…</option>
             <option value="debutant">Débutant</option>
@@ -427,13 +427,15 @@
     </p>
   </div>
 </footer>
-  <script>
+
+<!-- SCRIPT DE REDIRECTION -->
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('diagnostic-form');
     if (!form) return;
 
     form.addEventListener('submit', async function (event) {
-      event.preventDefault(); // Empêche la redirection Formspree
+      event.preventDefault(); // bloque la redirection Formspree
 
       const data = new FormData(form);
 
@@ -444,21 +446,15 @@
           headers: { 'Accept': 'application/json' }
         });
 
-        // Si tu veux être strict :
-        // if (response.ok) {
-        //   window.location.href = 'diagnostic-resultat.html';
-        // } else {
-        //   window.location.href = 'diagnostic-resultat.html';
-        // }
-
-        // Pour l’instant : toujours rediriger vers EXITUM
+        // Quoi qu'il arrive, on renvoie vers la page EXITUM
         window.location.href = 'diagnostic-resultat.html';
       } catch (error) {
-        // En cas de souci réseau, on peut quand même envoyer vers la page résultat
+        // Même en cas d'erreur réseau, on affiche la page résultat
         window.location.href = 'diagnostic-resultat.html';
       }
     });
   });
 </script>
+
 </body>
 </html>
