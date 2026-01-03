@@ -465,3 +465,7 @@ footer {
     gap: 10px;
   }
 }
+.card.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
