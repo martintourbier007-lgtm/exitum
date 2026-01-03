@@ -1,5 +1,5 @@
 /* =========================================================
-   EXITUM — Thème dark premium (v2 réglée)
+   EXITUM — Thème dark premium (v2 compacte)
    ========================================================= */
 
 /* ---------- Variables globales ---------- */
@@ -58,7 +58,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1120px;
+  max-width: 980px; /* plus étroit qu’avant */
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -141,7 +141,7 @@ header {
 /* ---------- Sections ---------- */
 
 .section {
-  padding: 44px 0; /* un peu moins haut que la V1 */
+  padding: 44px 0;
 }
 
 .section h1,
@@ -251,12 +251,15 @@ p.note {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 14px; /* un peu moins de gap = moins “massif” */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
   margin-top: 18px;
+  max-width: 900px;        /* blocs centrés, moins larges */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Cartes plus compactes, moins d’ombre */
+/* Cartes plus compactes */
 .card {
   background: radial-gradient(
       circle at top left,
@@ -264,10 +267,10 @@ p.note {
       transparent 60%
     ),
     var(--bg-elevated);
-  border-radius: var(--card-radius);
-  padding: 14px 14px 12px;
+  border-radius: 12px;
+  padding: 12px 13px;
   border: 1px solid var(--border-soft);
-  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.6);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.55);
   position: relative;
   overflow: hidden;
   transition: var(--transition-fast);
@@ -326,7 +329,7 @@ p.note {
     linear-gradient(to bottom right, #020617, #020617);
   border-top: 1px solid rgba(30, 64, 175, 0.7);
   border-bottom: 1px solid rgba(30, 64, 175, 0.6);
-  padding: 52px 0; /* plus imposant */
+  padding: 52px 0;
   margin-top: 32px;
 }
 
@@ -337,7 +340,7 @@ p.note {
 .cta-block h2 {
   margin-top: 0;
   margin-bottom: 12px;
-  font-size: 22px; /* + visible */
+  font-size: 22px;
 }
 
 .cta-block p {
@@ -354,16 +357,33 @@ p.note {
 
 /* ---------- Sections spécifiques ---------- */
 
+/* Bloc accès anticipé : grosse carte bien visible */
 .early-access {
-  margin-top: 16px;
+  margin-top: 28px;
+  padding: 22px 18px;
+  border-radius: 14px;
+  background: radial-gradient(
+      circle at top left,
+      rgba(37, 99, 235, 0.18),
+      transparent 65%
+    ),
+    rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.75);
 }
 
-/* accès anticipé en bas de page plus lisible */
 .early-access h2 {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin: 0 0 8px;
 }
 
+.early-access p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* formulaire email */
 .early-form {
   margin-top: 14px;
   display: flex;
@@ -373,11 +393,11 @@ p.note {
 
 .early-form input[type="email"] {
   flex: 1;
-  min-width: 220px;
-  padding: 9px 12px;
+  min-width: 260px;
+  padding: 10px 14px;
   border-radius: 999px;
   border: 1px solid var(--border-soft);
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(15, 23, 42, 0.98);
   color: var(--text);
   font-size: 14px;
 }
@@ -386,6 +406,11 @@ p.note {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.45);
+}
+
+.early-access .btn.primary {
+  padding: 10px 22px;
+  font-size: 14px;
 }
 
 /* ---------- Formulaires (diagnostic, etc.) ---------- */
@@ -507,6 +532,10 @@ a:hover {
   .btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .early-access {
+    padding: 18px 14px;
   }
 }
 
