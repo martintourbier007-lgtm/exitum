@@ -1,193 +1,219 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EXITUM — L’expatriation rendue claire</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXITUM — Sachez si partir vaut le coup. Pour VOUS.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
-<body>
-
-  <!-- SPLASH EXITUM -->
-  <div id="splash">
-    <div class="splash-logo">EXITUM</div>
-  </div>
-
-  <header>
-    <div class="container nav">
-      <div class="logo">EXITUM</div>
-    </div>
-  </header>
-  <nav>
-    <nav class="menu">
-  <a href="guide.html">Guides</a>
-  <a href="premium.html" class="btn primary">Premium</a>
-</nav>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero container">
-      <div class="badge">
-        <span class="badge-dot"></span>
-        Nouveau · Accès anticipé
-      </div>
-
-      <h1>L’expatriation, enfin rendue claire.</h1>
-      <p>
-        EXITUM vous aide à préparer votre départ à l’étranger de manière
-        structurée, sereine et responsable. Un environnement calme, clair et
-        pédagogique pour avancer sans paniquer devant l’administratif.
-      </p>
-
-      <div class="cta">
-        <a href="/guide.html" class="btn primary">
-          Consulter le guide gratuit
-        </a>
-
-        <a href="#early-access" class="btn secondary">
-          Rejoindre l’accès anticipé
-        </a>
-      </div>
-<a href="diagnostic.html" class="btn diagnostic">
-  Découvrir mon profil d’expatriation
-</a>
-
-      <p class="note">
-        Informations générales et pédagogiques uniquement. Aucun conseil fiscal individuel.
-      </p>
-    </section>
-
-    <!-- PROBLÈME -->
-    <section class="section container">
-      <h2>S’expatrier ne devrait pas être un parcours du combattant.</h2>
-      <ul>
-        <li>Informations dispersées et contradictoires</li>
-        <li>Démarches complexes et chronophages</li>
-        <li>Risques financiers si l’on se trompe</li>
-        <li>Stress permanent : peur de « mal faire »</li>
-      </ul>
-    </section>
-
-    <!-- FEATURES -->
-     <div class="grid">
-    <!-- 1. Guide Pré-Départ -->
-    <a href="guide.html" class="card card-link">
-      <h3>Guide Pré-Départ — Gratuit</h3>
-      <p>Les grandes étapes à connaître avant de quitter la France.</p>
-    </a>
-
-    <!-- 2. Checklists organisées -->
-    <a href="guide.html#checklist" class="card card-link">
-      <h3>Checklists organisées</h3>
-      <p>Une vue claire des démarches à faire, sans rien oublier.</p>
-    </a>
-
-    <!-- 3. Tableau de bord (bientôt) -->
-    <a href="#early-access" class="card card-link">
-      <h3>Tableau de bord (bientôt)</h3>
-      <p>Centraliser documents, preuves et suivi de votre départ.</p>
-    </a>
-
-    <!-- 4. Fiches pays fiables -->
- <a href="pays.html" class="card card-link">
-  <h3>Fiches pays fiables</h3>
-  <p>Comprendre la réalité de quelques destinations clés.</p>
-</a>
-
-
-    <!-- PHILOSOPHIE -->
-    <section class="section container">
-      <h2>Notre philosophie</h2>
-      <p class="note">
-        EXITUM n’encourage pas la fuite. Nous aidons celles et ceux qui choisissent l’expatriation
-        à le faire de manière claire, responsable et sereine.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Clarté</h3>
-          <p>Une information structurée, moderne et compréhensible — sans jargon inutile.</p>
+<body class="bg-gray-50">
+    
+    <!-- Header -->
+    <header class="bg-white border-b">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">EXITUM</div>
+            <a href="#diagnostic" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                Diagnostic gratuit
+            </a>
         </div>
+    </header>
 
-        <div class="card">
-          <h3>Responsabilité</h3>
-          <p>Jamais de promesses irréalistes. Jamais de « montages ». Uniquement de la pédagogie.</p>
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-4 py-20 text-center">
+        <div class="inline-block bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm mb-6">
+            🎯 Analyse gratuite • Résultats en 2 minutes
         </div>
-
-        <div class="card">
-          <h3>Calme</h3>
-          <p>Un environnement apaisant pour avancer étape par étape, sans stress inutile.</p>
+        
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            Sachez si partir vaut le coup.<br/>
+            <span class="text-blue-600">Pour VOUS.</span>
+        </h1>
+        
+        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Vous gagnez bien votre vie en France. Mais entre impôts, charges et inflation, 
+            construire du patrimoine devient impossible.
+        </p>
+        
+        <p class="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">
+            Partir peut vous faire économiser <strong>20.000€ à 50.000€ par an</strong> — 
+            mais seulement si c'est bien fait, pour VOTRE situation.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#diagnostic" class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+                Diagnostic gratuit →
+            </a>
+            <a href="#payant" class="bg-white border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-gray-400 transition">
+                Analyse complète • 149€
+            </a>
         </div>
-      </div>
+        
+        <p class="text-sm text-gray-500 mt-6">
+            ✓ Pas de spam • ✓ Résultats immédiats • ✓ 100% confidentiel
+        </p>
     </section>
 
-    <!-- À PROPOS -->
-    <section class="section container">
-      <h2>À propos d’EXITUM</h2>
-      <p>
-        EXITUM est un projet indépendant né d’un constat simple : beaucoup de Français envisagent de partir,
-        mais se retrouvent seuls face à une fiscalité complexe, une charge mentale énorme et des informations
-        contradictoires.
-      </p>
-      <p>
-        L’objectif n’est pas de vendre du rêve ni d’encourager des montages risqués, mais d’apporter un cadre
-        <strong>calme, pédagogique et responsable</strong> à celles et ceux qui veulent préparer leur expatriation sérieusement.
-      </p>
-
-      <p class="note">
-        EXITUM n’est pas un cabinet fiscal et ne donne aucun conseil individuel.
-      </p>
+    <!-- Social Proof (si vous avez) -->
+    <section class="bg-white py-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-600 mb-6">Déjà utilisé par</p>
+            <div class="flex justify-center gap-8 text-2xl font-bold text-gray-400">
+                <span>127+ analyses</span>
+                <span>•</span>
+                <span>23 pays couverts</span>
+            </div>
+        </div>
     </section>
 
-    <!-- ACCÈS ANTICIPÉ -->
-    <section id="early-access" class="section container early-access">
-      <h2>Rejoindre l’accès anticipé EXITUM</h2>
-
-      <p>
-        Recevez le guide complet, les outils gratuits et les nouveautés EXITUM — en priorité.
-      </p>
-
-      <form
-        action="https://formspree.io/f/xrebpqvq"
-        method="POST"
-        class="early-form"
-      >
-        <input
-          type="email"
-          name="email"
-          placeholder="Votre email"
-          required
-        />
-
-        <button type="submit" class="btn primary">
-          S’inscrire
-        </button>
-      </form>
-
-      <p class="note">
-        Aucun spam. Vous pouvez vous désinscrire à tout moment.
-      </p>
+    <!-- Comment ça marche -->
+    <section id="diagnostic" class="max-w-6xl mx-auto px-4 py-20">
+        <h2 class="text-4xl font-bold text-center mb-16">Comment ça marche</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                <h3 class="text-xl font-semibold mb-3">Répondez au questionnaire</h3>
+                <p class="text-gray-600">5 questions rapides sur votre situation (statut, revenus, projet)</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                <h3 class="text-xl font-semibold mb-3">Recevez votre analyse</h3>
+                <p class="text-gray-600">Profil fiscal, top 3 destinations, économies estimées (sous 2 minutes)</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                <h3 class="text-xl font-semibold mb-3">Décidez en connaissance</h3>
+                <p class="text-gray-600">Chiffres clairs pour savoir si ça vaut le coup POUR VOUS</p>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="[LIEN TYPEFORM ICI]" class="bg-blue-600 text-white px-10 py-4 rounded-lg text-xl font-semibold hover:bg-blue-700 transition inline-block">
+                Démarrer mon diagnostic gratuit →
+            </a>
+        </div>
     </section>
 
-  </main>
+    <!-- Ce que vous recevez (gratuit vs payant) -->
+    <section class="bg-gray-100 py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Gratuit ou approfondi ?</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Gratuit -->
+                <div class="bg-white rounded-xl p-8 border-2 border-gray-200">
+                    <div class="text-sm font-semibold text-blue-600 mb-2">DIAGNOSTIC GRATUIT</div>
+                    <div class="text-4xl font-bold mb-6">0€</div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span>Estimation pression fiscale actuelle</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span>Top 3 destinations adaptées</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span>Fourchette d'économies potentielles</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span>Premiers points d'attention</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="[LIEN TYPEFORM]" class="block text-center bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+                        Commencer →
+                    </a>
+                </div>
+                
+                <!-- Payant -->
+                <div class="bg-blue-600 text-white rounded-xl p-8 border-2 border-blue-700 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-blue-900 px-4 py-1 rounded-full text-sm font-bold">
+                        RECOMMANDÉ
+                    </div>
+                    
+                    <div class="text-sm font-semibold mb-2">ANALYSE COMPLÈTE</div>
+                    <div class="text-4xl font-bold mb-1">149€</div>
+                    <div class="text-sm opacity-80 mb-6">Livré sous 48h</div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <span class="mr-3">✓</span>
+                            <span><strong>Tout du gratuit</strong> +</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3">✓</span>
+                            <span>Calculs précis sur VOTRE situation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3">✓</span>
+                            <span>Analyse 5 destinations détaillées</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3">✓</span>
+                            <span>Détection red flags personnalisés</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3">✓</span>
+                            <span>Roadmap étape par étape</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3">✓</span>
+                            <span>20min de Q&A en visio</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="[STRIPE PAYMENT LINK]" class="block text-center bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        Commander →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <div class="container footer-content">
-      <p><strong>EXITUM</strong> — Clarity for international mobility.</p>
-      <p class="note">
-        EXITUM ne fournit aucun conseil fiscal, juridique ou financier individuel.
-      </p>
-    </div>
-  </footer>
+    <!-- FAQ courte -->
+    <section class="max-w-4xl mx-auto px-4 py-20">
+        <h2 class="text-4xl font-bold text-center mb-12">Questions fréquentes</h2>
+        
+        <div class="space-y-6">
+            <details class="bg-white p-6 rounded-lg border">
+                <summary class="font-semibold cursor-pointer">C'est légal de partir pour raisons fiscales ?</summary>
+                <p class="mt-4 text-gray-600">Oui, totalement. Vous avez le droit de choisir où vous vivez. L'important est de le faire dans les règles, en respectant les obligations fiscales des deux pays.</p>
+            </details>
+            
+            <details class="bg-white p-6 rounded-lg border">
+                <summary class="font-semibold cursor-pointer">Vous êtes des avocats fiscalistes ?</summary>
+                <p class="mt-4 text-gray-600">Non. Nous fournissons une analyse pédagogique et informative, pas du conseil fiscal individuel. Pour des décisions engageantes, nous vous orientons vers des fiscalistes certifiés.</p>
+            </details>
+            
+            <details class="bg-white p-6 rounded-lg border">
+                <summary class="font-semibold cursor-pointer">Ça marche pour tout le monde ?</summary>
+                <p class="mt-4 text-gray-600">Non. L'expatriation fiscale n'a de sens qu'à partir d'un certain niveau de revenus (généralement 60k€+/an). En dessous, les coûts dépassent souvent les bénéfices.</p>
+            </details>
+            
+            <details class="bg-white p-6 rounded-lg border">
+                <summary class="font-semibold cursor-pointer">Et l'exit tax ?</summary>
+                <p class="mt-4 text-gray-600">L'exit tax s'applique si vous avez plus de 800k€ de patrimoine mobilier (actions, parts sociales). Notre diagnostic identifie si vous êtes concerné et comment l'anticiper.</p>
+            </details>
+        </div>
+    </section>
 
-  <!-- Disable scroll during splash -->
-  <script>
-    document.body.style.overflow = "hidden";
-    setTimeout(() => {
-      document.body.style.overflow = "auto";
-    }, 2200);
-  </script>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="text-2xl font-bold text-white mb-4">EXITUM</div>
+            <p class="mb-6">Clarity for international mobility.</p>
+            <p class="text-sm">
+                EXITUM ne fournit aucun conseil fiscal, juridique ou financier individuel.<br/>
+                Informations générales et pédagogiques uniquement.
+            </p>
+        </div>
+    </footer>
 
 </body>
 </html>
